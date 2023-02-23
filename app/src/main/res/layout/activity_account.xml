@@ -12,19 +12,19 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="57dp"
         app:layout_constraintEnd_toStartOf="@+id/User_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/im4" />
+        app:srcCompat="@drawable/im5" />
 
     <TextView
         android:id="@+id/User_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="60dp"
         android:text="Username"
         android:textColor="#0E0101"
         android:textSize="20sp"
@@ -37,11 +37,15 @@
         android:id="@+id/sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="37dp"
         android:text="Sign in"
+        app:layout_constraintBottom_toTopOf="@+id/Help_center_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.005"
         app:layout_constraintStart_toEndOf="@+id/profile_img"
-        app:layout_constraintTop_toBottomOf="@+id/User_name" />
+        app:layout_constraintTop_toBottomOf="@+id/User_name"
+        app:layout_constraintVertical_bias="0.18" />
 
     <TextView
         android:id="@+id/Help_center_id"
