@@ -16,7 +16,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageview"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="190dp"
             android:scaleType="fitXY"
             android:src="@drawable/im4"
             app:layout_constraintBottom_toBottomOf="parent"

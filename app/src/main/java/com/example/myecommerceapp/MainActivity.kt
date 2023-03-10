@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -16,6 +17,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var  recyclerView2: RecyclerView
     private lateinit var offerlist:ArrayList<offer>
     private lateinit var offerAdapter: offer_adapter
+    private lateinit var cat: LinearLayout
+    private lateinit var recyclerView3: RecyclerView
+    private lateinit var recentlist:ArrayList<recent_data>
+    private lateinit var recentAdapter: recent_adapter
 
 
 
@@ -25,11 +30,18 @@ class MainActivity : AppCompatActivity() {
 
         init1()
         init2()
+        init4()
 
         acc = findViewById(R.id.account_button)
+        cat =findViewById(R.id.category_button)
         acc.setOnClickListener {
             val intent = Intent(this,account::class.java)
             startActivity(intent)
+        }
+
+        cat.setOnClickListener{
+            val intent1 = Intent(this,category::class.java)
+            startActivity(intent1)
         }
 
     }
@@ -62,7 +74,6 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
     private fun init2(){
 
         recyclerView2=findViewById(R.id.Recycle2)
@@ -77,8 +88,33 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun additem2(){
-       offerlist.add(offer(R.drawable.im4))
-        offerlist.add(offer(R.drawable.im4))
+       offerlist.add(offer(R.drawable.im20))
+        offerlist.add(offer(R.drawable.im18))
+        offerlist.add(offer(R.drawable.im17))
+
+    }
+
+
+
+    private fun init4(){
+        recyclerView3=findViewById(R.id.Recycle3)
+        recyclerView3.setHasFixedSize(true)
+        recyclerView3.layoutManager=  GridLayoutManager(this,2)
+        recentlist = ArrayList()
+        additem4()
+        recentAdapter=recent_adapter(recentlist)
+        recyclerView3.adapter=recentAdapter
+
+    }
+
+    private fun additem4(){
+
+        recentlist.add(recent_data(R.drawable.im4,"Rs.500"))
+        recentlist.add(recent_data(R.drawable.im10,"Rs.800"))
+        recentlist.add(recent_data(R.drawable.im11,"Rs.400"))
+        recentlist.add(recent_data(R.drawable.im12,"Rs.1200"))
+        recentlist.add(recent_data(R.drawable.im15,"Rs.1500"))
+        recentlist.add(recent_data(R.drawable.im14,"Rs.250"))
 
     }
 }
